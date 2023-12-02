@@ -14,8 +14,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
 
-  { path: "/collection-3d", element: <Collections3d /> },
-  { path: "/collection-2d", element: <Collections2d /> },
+  { path: "/collection", element: <Collections3d /> },
+  { path: "/collection2", element: <Collections2d /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

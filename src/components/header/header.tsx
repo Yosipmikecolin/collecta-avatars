@@ -48,7 +48,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to={"/collection-3d"}
+              to={"/collection"}
               style={{
                 color: pathname === "/collection-3d" ? "#0c4bd3" : "black",
               }}
@@ -58,7 +58,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to={"/collection-2d"}
+              to={"/collection2"}
               style={{
                 color: pathname === "/collection-2d" ? "#0c4bd3" : "black",
               }}
