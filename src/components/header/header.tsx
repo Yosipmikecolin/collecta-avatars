@@ -48,7 +48,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to={"/collection"}
+              to={"/collection-3d"}
               style={{
                 color: pathname === "/collection-3d" ? "#0c4bd3" : "black",
               }}
@@ -58,7 +58,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to={"/collection2"}
+              to={"/collection-2d"}
               style={{
                 color: pathname === "/collection-2d" ? "#0c4bd3" : "black",
               }}
@@ -78,12 +78,7 @@ const Header = () => {
           )}
         </ul>
 
-        <img
-          src={IconMenu}
-          width={30}
-          className="icon-menu"
-          onClick={openMenu}
-        />
+        <img src={IconMenu} width={30} className="icon-menu" onClick={openMenu}/>
       </nav>
 
       <Modal

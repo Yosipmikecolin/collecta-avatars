@@ -9,7 +9,7 @@ import { images3D } from "../../utils/array-images-3d";
 import { Toaster, toast } from "react-hot-toast";
 import useStore from "../../hooks/state-avarts";
 
-const Collections = () => {
+const Collections3d = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const [areImagesLoaded, setAreImagesLoaded] = useState(false);
   const [pay, setPay] = useState(false);
@@ -109,4 +109,4 @@ const Collections = () => {
   );
 };
 
-export default Collections;
+export default Collections3d;

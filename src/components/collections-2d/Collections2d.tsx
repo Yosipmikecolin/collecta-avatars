@@ -8,7 +8,7 @@ import { Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import useStore from "../../hooks/state-avarts";
 
-const NFT2D = () => {
+const Collections2d = () => {
   const [areImagesLoaded, setAreImagesLoaded] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const { avatars, addAvatar } = useStore();
@@ -107,4 +107,4 @@ const NFT2D = () => {
   );
 };
 
-export default NFT2D;
+export default Collections2d;
