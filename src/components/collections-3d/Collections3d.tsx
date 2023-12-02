@@ -1,18 +1,19 @@
-import { useState } from "react";
-import IconPay from "../../assets/icon-pay.png";
-import { images2D } from "../../utils/array-images-2d";
 import Header from "../header/header";
-import "./Collection2d.css";
-import toast, { Toaster } from "react-hot-toast";
+import IconPay from "../../assets/icon-pay.png";
+
+import "./Collections3d.css";
 import { Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { useState } from "react";
+import { images3D } from "../../utils/array-images-3d";
+import { Toaster, toast } from "react-hot-toast";
 import useStore from "../../hooks/state-avarts";
 
-const NFT2D = () => {
-  const [areImagesLoaded, setAreImagesLoaded] = useState(false);
+const Collections = () => {
   const [opened, { open, close }] = useDisclosure(false);
-  const { avatars, addAvatar } = useStore();
+  const [areImagesLoaded, setAreImagesLoaded] = useState(false);
   const [pay, setPay] = useState(false);
+  const { avatars, addAvatar } = useStore();
   const [avatarSelect, setAvatarSelect] = useState({
     name: "",
     code: 0,
@@ -20,7 +21,7 @@ const NFT2D = () => {
   });
 
   const handleImageLoad = () => {
-    const allImagesLoaded = images2D.every((image) => image.isLoaded);
+    const allImagesLoaded = images3D.every((image) => image.isLoaded);
 
     if (allImagesLoaded) {
       setAreImagesLoaded(true);
@@ -44,10 +45,10 @@ const NFT2D = () => {
 
   return (
     <section className="container-collections">
-      <Toaster position="top-center" reverseOrder={false} gutter={8} />
       <Header />
       <div className="collections">
-        {images2D.map((image, index) => (
+        <Toaster position="top-center" reverseOrder={false} gutter={8} />
+        {images3D.map((image, index) => (
           <div className="card2" key={index}>
             {!areImagesLoaded && (
               <div className="loader">
@@ -64,6 +65,7 @@ const NFT2D = () => {
             <div className="section-card">
               <p>{image.name + " # " + image.code}</p>
               <button
+                disabled={avatars.some((i) => i.code === image.code)}
                 onClick={() => openModal(image.name, image.code, image.src)}
                 style={{
                   backgroundColor: avatars.some((i) => i.code === image.code)
@@ -91,15 +93,15 @@ const NFT2D = () => {
           <h2>{avatarSelect.name}</h2>
           <img src={avatarSelect.src} />
           <p>
-            Diseños 2D premiums de los mejores ilustradores de new york y
-            chicago
+            Nuestros NFT son diseñados por los mejores diseñadores de la
+            industria, cada NFT se da acceso al nuevas colecciones premius
           </p>
           <h2>{avatarSelect.code}</h2>
           <button
             onClick={payNFT}
             style={{ display: "flex", justifyContent: "center" }}
           >
-            {pay ? <div className="loader-mini" /> : "PAGAR NFT"}
+            {pay ? <div className="loader-mini" /> : "PAGAR NFT"}{" "}
           </button>
         </div>
       </Modal>
@@ -107,4 +109,4 @@ const NFT2D = () => {
   );
 };
 
-export default NFT2D;
+export default Collections;
