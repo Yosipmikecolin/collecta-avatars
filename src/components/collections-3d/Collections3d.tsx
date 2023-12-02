@@ -4,28 +4,21 @@ import IconPay from "../../assets/icon-pay.png";
 import "./Collections3d.css";
 import { Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { images3D } from "../../utils/array-images-3d";
 import { Toaster, toast } from "react-hot-toast";
 import useStore from "../../hooks/state-avarts";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const Collections3d = () => {
   const [opened, { open, close }] = useDisclosure(false);
   const [areImagesLoaded, setAreImagesLoaded] = useState(false);
   const [pay, setPay] = useState(false);
   const { avatars, addAvatar } = useStore();
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
   const [avatarSelect, setAvatarSelect] = useState({
     name: "",
     code: 0,
     src: "",
   });
-
-  useEffect(() => {
-    navigate(pathname);
-  }, []);
 
   const handleImageLoad = () => {
     const allImagesLoaded = images3D.every((image) => image.isLoaded);

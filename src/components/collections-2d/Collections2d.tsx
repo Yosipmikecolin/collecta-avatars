@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import IconPay from "../../assets/icon-pay.png";
 import { images2D } from "../../utils/array-images-2d";
 import Header from "../header/header";
@@ -7,24 +7,17 @@ import toast, { Toaster } from "react-hot-toast";
 import { Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import useStore from "../../hooks/state-avarts";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const Collections2d = () => {
   const [areImagesLoaded, setAreImagesLoaded] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const { avatars, addAvatar } = useStore();
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
   const [pay, setPay] = useState(false);
   const [avatarSelect, setAvatarSelect] = useState({
     name: "",
     code: 0,
     src: "",
   });
-
-  useEffect(() => {
-    navigate(pathname);
-  }, []);
 
   const handleImageLoad = () => {
     const allImagesLoaded = images2D.every((image) => image.isLoaded);
