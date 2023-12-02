@@ -1,0 +1,137 @@
+.container-collections {
+  margin: auto;
+}
+
+.collections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.card2 {
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+  position: relative;
+}
+
+.card2:hover {
+  transform: translateY(-20px);
+  -webkit-box-shadow: 0px 8px 25px -6px rgba(105, 100, 105, 1);
+  -moz-box-shadow: 0px 8px 25px -6px rgba(105, 100, 105, 1);
+  box-shadow: 0px 8px 25px -6px rgba(105, 100, 105, 1);
+}
+
+.card2 > img {
+  object-fit: cover;
+  width: 300px;
+  height: 98%;
+}
+
+.section-card {
+  background-color: #eef0f3;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  padding: 10px;
+  bottom: -10px;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-card > button {
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  transition: 500ms ease;
+}
+
+.section-card > button:hover {
+  background-color: #0c4bd3;
+}
+
+@media (max-width: 1224px) {
+  .collections {
+    justify-content: center;
+  }
+
+  .card2 {
+    width: 250px;
+  }
+
+  .card2 > img {
+    width: 250px;
+  }
+}
+
+.card-pay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.card-pay > img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 30px;
+  margin: auto;
+}
+
+.card-pay > button {
+  background-color: #0c4bd3;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eef0f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spiner {
+  border: 10px solid #f3f3f3; 
+  border-top: 10px solid #0c4bd3;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card-pay > button:hover {
+  background-color: #073599;
+}

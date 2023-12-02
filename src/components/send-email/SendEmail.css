@@ -1,0 +1,96 @@
+.container-send-mail {
+  background-color: white;
+  width: 100%;
+  height: 100px;
+  border-radius: 30px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-send-mail > input {
+  width: 80%;
+  height: 100%;
+  font-size: 50px;
+  background-color: transparent;
+  padding: 20px;
+  border: none;
+  color: #b4b4c4;
+}
+
+.button-email {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 80px;
+  position: relative;
+  right: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  transition: 500ms ease;
+}
+
+.button-email-disabled {
+  background-color: rgba(99, 98, 98, 0.507);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 80px;
+  position: relative;
+  right: 10px;
+  font-size: 30px;
+  transition: 500ms ease;
+  opacity: 0.5;
+}
+
+.button-email:hover {
+  background-color: rgb(241, 27, 27);
+}
+
+.container-send-mail > input:focus {
+  outline: none;
+}
+
+@media (max-width: 2154px) {
+  .container-send-mail {
+    height: 60px;
+    border-radius: 10px;
+  }
+
+  .container-send-mail > input {
+    font-size: 20px;
+  }
+
+  .container-send-mail > button {
+    font-size: 20px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1064px) {
+  .container-send-mail > button {
+    padding: 10px 50px;
+  }
+}
+
+@media (max-width: 896px) {
+  .container-send-mail {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .container-send-mail > input {
+    font-size: 16px;
+  }
+
+  .container-send-mail {
+    height: 40px;
+  }
+
+  .container-send-mail > button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
